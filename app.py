@@ -101,4 +101,5 @@ with st.form(key='profile_form'):
     url = "https://www.google.com/search?q=" + text
 
     # Open the search result in a new tab
-    st.write("""<a href="""" + url + """">Open in Google Chrome</a>""")
+    st.write("""<a href="""" + url + """" target="_blank">Open in Google Chrome</a>""")
+    #st.write(""<a href="""" + url + """">Open in Google Chrome</a>""")
