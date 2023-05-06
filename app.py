@@ -22,11 +22,6 @@ import streamlit as st
 # Get the input text from the user
 text = st.text_input("Enter your text here:")
 
-# Search for the text in Google Chrome
-url = "https://www.google.com/search?q=" + text
-
-# Open the search result in a new tab
-st.write("""<a href="""" + url + """">Open in Google Chrome</a>""")
 
 
 # Set the path to the ChromeDriver executable
@@ -100,3 +95,10 @@ with st.form(key='profile_form'):
     #キャンセルか送信で分ける
     if submit_btn:
         st.text(f'ようこそ!{name}さん！')
+
+    
+    # Search for the text in Google Chrome
+    url = "https://www.google.com/search?q=" + text
+
+    # Open the search result in a new tab
+    st.write("""<a href="""" + url + """">Open in Google Chrome</a>""")
