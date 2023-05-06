@@ -16,20 +16,17 @@
 #driver = webdriver.Chrome('chromedriver',options=options)
 #driver.get('https://bard.google.com/?hl=en')
 
-import streamlit as st
-import googletrans
 
-# Set the language code for the translation
-lang_code = "ja"
+import streamlit as st
 
 # Get the input text from the user
 text = st.text_input("Enter your text here:")
 
-# Translate the text to Japanese
-translated_text = googletrans.translate(text, dest=lang_code)
+# Search for the text in Google Chrome
+url = "https://www.google.com/search?q=" + text
 
-# Display the translated text
-st.write(translated_text)
+# Open the search result in a new tab
+st.write("""<a href="""" + url + """">Open in Google Chrome</a>""")
 
 
 # Set the path to the ChromeDriver executable
