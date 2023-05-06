@@ -7,36 +7,36 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # Set the path to the ChromeDriver executable
-CHROME_DRIVER_PATH = "/path/to/chromedriver"
+#CHROME_DRIVER_PATH = "/path/to/chromedriver"
 
 # Create a new ChromeWebDriver instance
-driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
+#driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
 # Navigate to the Google search page
-driver.get("https://www.google.com/")
+#driver.get("https://www.google.com/")
 
 # Find the search input box
-search_input = driver.find_element_by_name("q")
+#search_input = driver.find_element_by_name("q")
 
 # Enter a search query
-search_input.send_keys("What is the meaning of life?")
+#search_input.send_keys("What is the meaning of life?")
 
 # Click the search button
-search_button = driver.find_element_by_xpath("//*[@id='tsf']/div[2]/div/div[3]/button")
-search_button.click()
+#search_button = driver.find_element_by_xpath("//*[@id='tsf']/div[2]/div/div[3]/button")
+#search_button.click()
 
 # Wait for the search results to load
-driver.implicitly_wait(10)
+#driver.implicitly_wait(10)
 
 # Get the search results
-search_results = driver.find_elements_by_xpath("//*[@id='srg']/div/div/div/h3/a")
+#search_results = driver.find_elements_by_xpath("//*[@id='srg']/div/div/div/h3/a")
 
 # Print the search results
-for search_result in search_results:
-    print(search_result.text)
+#for search_result in search_results:
+#    print(search_result.text)
 
 # Close the driver
-driver.quit()
+#driver.quit()
 
 
 
