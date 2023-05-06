@@ -6,6 +6,7 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+driver = webdriver
 driver.get('https://bard.google.com/?hl=en')
 # Set the path to the ChromeDriver executable
 #CHROME_DRIVER_PATH = "/path/to/chromedriver"
