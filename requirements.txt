@@ -1,1 +1,1 @@
-googletrans
+chromium-chromedriver

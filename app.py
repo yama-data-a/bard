@@ -18,10 +18,30 @@
 
 
 import streamlit as st
-
+#ライブラリをインポート
+from selenium import webdriver
+import time
 # Get the input text from the user
 text = st.text_input("Enter your text here:")
 
+
+# ブラウザをheadlessモード実行
+print("\nブラウザを設定")
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome('chromedriver',options=options)
+driver.implicitly_wait(10)
+
+
+# サイトにアクセス
+print("サイトにアクセス開始")
+driver.get("https://qiita.com/motoki1990/items/a59a09c5966ce52128be")
+time.sleep(3)
+
+# driver.find_elements_by_css_selector("xxx") 的な処理を自由に
+print("サイトのタイトル：", driver.title)
 
 
 # Set the path to the ChromeDriver executable
