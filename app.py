@@ -1,20 +1,40 @@
 #コマンドプロンプトで以下を入力すると開ける
 #cd パス
 #streamlit run app.py
-import streamlit as st
-import selenium
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+#import streamlit as st
+#import selenium
+#from selenium import webdriver
+#from selenium.webdriver.common.by import By
 
 # Chrome Driverにセットするオプションの設定。
 # やっとかないとエラーになるよ！
-options = webdriver.ChromeOptions()
-options.add_argument('--headless') # ヘッドレスモードを有効にする。
-options.add_argument('--no-sandbox') # sandboxモードを解除する。この記述がないとエラーになってしまう。 
-options.add_argument('--disable-dev-shm-usage') # /dev/shmパーティションの使用を禁止し、パーティションが小さすぎることによる、クラッシュを回避する。
+#options = webdriver.ChromeOptions()
+#options.add_argument('--headless') # ヘッドレスモードを有効にする。
+#options.add_argument('--no-sandbox') # sandboxモードを解除する。この記述がないとエラーになってしまう。 
+#options.add_argument('--disable-dev-shm-usage') # /dev/shmパーティションの使用を禁止し、パーティションが小さすぎることによる、クラッシュを回避する。
 
-driver = webdriver.Chrome('chromedriver',options=options)
-driver.get('https://bard.google.com/?hl=en')
+#driver = webdriver.Chrome('chromedriver',options=options)
+#driver.get('https://bard.google.com/?hl=en')
+
+import streamlit as st
+from googlesearch import search
+
+# Streamlitアプリケーションを作成
+st.title("Google検索")
+
+# ユーザーの入力を受け取る
+query = st.text_input("検索キーワードを入力してください")
+
+# 入力がある場合は検索を実行
+if query:
+    # Google検索を実行
+    results = search(query, num_results=10)
+    
+    # 結果を表示
+    for i, result in enumerate(results):
+        st.write(f"{i+1}. [{result}]({result})")
+
+
 # Set the path to the ChromeDriver executable
 #CHROME_DRIVER_PATH = "/path/to/chromedriver"
 
