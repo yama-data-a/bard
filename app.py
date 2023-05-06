@@ -6,7 +6,14 @@ import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver
+# Chrome Driverにセットするオプションの設定。
+# やっとかないとエラーになるよ！
+options = webdriver.ChromeOptions()
+options.add_argument('--headless') # ヘッドレスモードを有効にする。
+options.add_argument('--no-sandbox') # sandboxモードを解除する。この記述がないとエラーになってしまう。 
+options.add_argument('--disable-dev-shm-usage') # /dev/shmパーティションの使用を禁止し、パーティションが小さすぎることによる、クラッシュを回避する。
+
+driver = webdriver.Chrome('chromedriver',options=options)
 driver.get('https://bard.google.com/?hl=en')
 # Set the path to the ChromeDriver executable
 #CHROME_DRIVER_PATH = "/path/to/chromedriver"
