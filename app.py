@@ -17,22 +17,19 @@
 #driver.get('https://bard.google.com/?hl=en')
 
 import streamlit as st
-from googlesearch import search
+import googletrans
 
-# Streamlitアプリケーションを作成
-st.title("Google検索")
+# Set the language code for the translation
+lang_code = "ja"
 
-# ユーザーの入力を受け取る
-query = st.text_input("検索キーワードを入力してください")
+# Get the input text from the user
+text = st.text_input("Enter your text here:")
 
-# 入力がある場合は検索を実行
-if query:
-    # Google検索を実行
-    results = search(query, num_results=10)
-    
-    # 結果を表示
-    for i, result in enumerate(results):
-        st.write(f"{i+1}. [{result}]({result})")
+# Translate the text to Japanese
+translated_text = googletrans.translate(text, dest=lang_code)
+
+# Display the translated text
+st.write(translated_text)
 
 
 # Set the path to the ChromeDriver executable
